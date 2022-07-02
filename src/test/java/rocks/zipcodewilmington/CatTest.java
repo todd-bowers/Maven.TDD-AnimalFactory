@@ -6,6 +6,7 @@ import rocks.zipcodewilmington.animals.Cat;
 import rocks.zipcodewilmington.animals.Dog;
 
 import java.util.Date;
+import java.util.Optional;
 
 /**
  * @author leon on 4/19/18.
@@ -64,6 +65,17 @@ public class CatTest {
         Assert.assertEquals(1, numberOfMeals);
     }
     // TODO - Create tests for `Integer getId()`
+    @Test
+    public void getIDTest() {
+        //Given
+        Cat cat = new Cat(null, null, 6);
+        Integer givenID = 6;
+        //When
+        Integer actualID = cat.getId();
+        //Then
+        Assert.assertEquals(givenID, actualID);
+
+    }
     // TODO - Create test to check Animal inheritance; google search `java instanceof keyword`
     // TODO - Create test to check Mammal inheritance; google search `java instanceof keyword`
 
