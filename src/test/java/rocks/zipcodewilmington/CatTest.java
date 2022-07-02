@@ -38,6 +38,19 @@ public class CatTest {
 
     }
     // TODO - Create tests for `setBirthDate(Date birthDate)`
+    @Test
+    public void setBirthDateTest() {
+        // Given
+        Cat cat = new Cat(null, null, null);
+        Date givenBirthDate = new Date(1997-4-16);
+
+        // When
+        cat.setBirthDate(givenBirthDate);
+
+        // Then (we expect to get the given name from the cat)
+        Date catBirthDate = cat.getBirthDate();
+        Assert.assertEquals(givenBirthDate, catBirthDate);
+    }
     // TODO - Create tests for `void eat(Food food)`
     // TODO - Create tests for `Integer getId()`
     // TODO - Create test to check Animal inheritance; google search `java instanceof keyword`
