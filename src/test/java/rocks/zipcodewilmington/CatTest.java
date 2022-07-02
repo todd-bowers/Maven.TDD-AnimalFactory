@@ -3,6 +3,7 @@ package rocks.zipcodewilmington;
 import org.junit.Assert;
 import org.junit.Test;
 import rocks.zipcodewilmington.animals.Cat;
+import rocks.zipcodewilmington.animals.Dog;
 
 import java.util.Date;
 
@@ -11,7 +12,31 @@ import java.util.Date;
  */
 public class CatTest {
     // TODO - Create tests for `void setName(String name)`
+    @Test
+    public void setNameTest() {
+        // Given (a name exists and a cat exists)
+        Cat cat = new Cat(null, null, null);
+        String givenName = "Sophie";
+
+        // When (a cat's name is set to the given name)
+        cat.setName(givenName);
+
+        // Then (we expect to get the given name from the cat)
+        String catName = cat.getName();
+        Assert.assertEquals(catName, givenName);
+    }
     // TODO - Create tests for `speak`
+    @Test
+    public void speakTest() {
+        //Given (a cat that speaks)
+        Cat cat = new Cat(null, null, null);
+        //When
+        cat.speak();
+        //Then
+        String speak = cat.speak();
+        Assert.assertEquals(speak, "meow!");
+
+    }
     // TODO - Create tests for `setBirthDate(Date birthDate)`
     // TODO - Create tests for `void eat(Food food)`
     // TODO - Create tests for `Integer getId()`
