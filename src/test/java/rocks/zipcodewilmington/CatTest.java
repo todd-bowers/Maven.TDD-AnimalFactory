@@ -52,6 +52,17 @@ public class CatTest {
         Assert.assertEquals(givenBirthDate, catBirthDate);
     }
     // TODO - Create tests for `void eat(Food food)`
+    @Test
+    public void eatTest() {
+        //Given
+        Cat cat = new Cat(null, null, null);
+        Food food = new Food();
+        //When
+        cat.eat(food);
+        //Then
+        int numberOfMeals = cat.getNumberOfMealsEaten();
+        Assert.assertEquals(1, numberOfMeals);
+    }
     // TODO - Create tests for `Integer getId()`
     // TODO - Create test to check Animal inheritance; google search `java instanceof keyword`
     // TODO - Create test to check Mammal inheritance; google search `java instanceof keyword`
