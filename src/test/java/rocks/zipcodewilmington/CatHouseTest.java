@@ -15,6 +15,17 @@ import java.util.Date;
  */
 public class CatHouseTest {
     // TODO - Create tests for `void add(Cat cat)`
+    @Test
+    public void addCatTest() {
+        String name = "Sophie";
+        Date birthDate = new Date();
+        Cat animal = AnimalFactory.createCat(name, birthDate);
+        CatHouse.clear();
+        CatHouse.add(animal);
+        System.out.println(CatHouse.getNumberOfCats());
+        CatHouse.remove(animal);
+        Assert.assertEquals((Integer) 0, CatHouse.getNumberOfCats());
+    }
     // TODO - Create tests for `void remove(Integer id)`
     // TODO - Create tests for `void remove(Cat cat)`
     // TODO - Create tests for `Cat getCatById(Integer id)`
