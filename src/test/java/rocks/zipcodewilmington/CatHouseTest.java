@@ -27,8 +27,56 @@ public class CatHouseTest {
         Assert.assertEquals((Integer) 0, CatHouse.getNumberOfCats());
     }
     // TODO - Create tests for `void remove(Integer id)`
+    @Test
+    public void removeCatByIDTest() {
+        String name = "Sophie";
+        Date birthDate = new Date();
+        Cat animal = AnimalFactory.createCat(name, birthDate);
+        CatHouse.clear();
+        CatHouse.add(animal);
+        System.out.println(CatHouse.getCatById(0));
+        CatHouse.remove(0);
+        Assert.assertEquals(null, CatHouse.getCatById(0));
+        System.out.println(CatHouse.getCatById(0));
+    }
     // TODO - Create tests for `void remove(Cat cat)`
+    @Test
+    public void removeCatByNameTest() {
+        String name = "Sophie";
+        Date birthDate = new Date();
+        Cat animal = AnimalFactory.createCat(name, birthDate);
+        CatHouse.clear();
+        CatHouse.add(animal);
+        System.out.println(CatHouse.getCatById(0));
+        CatHouse.remove(animal);
+        Assert.assertEquals(null, CatHouse.getCatById(0));
+        System.out.println(CatHouse.getCatById(0));
+    }
     // TODO - Create tests for `Cat getCatById(Integer id)`
+    @Test
+    public void getCatByIdTest() {
+        String name = "Sophie";
+        Date birthDate = new Date();
+        Cat animal = AnimalFactory.createCat(name, birthDate);
+        CatHouse.clear();
+        CatHouse.add(animal);
+        Assert.assertEquals(animal, CatHouse.getCatById(0));
+    }
+    @Test
+    public void getCatByIdTest2() {
+        String name = "Sophie";
+        Date birthDate = new Date();
+        Cat sophie = AnimalFactory.createCat(name, birthDate);
+        String name2 = "Garfield";
+        Date birthDate2 = new Date();
+        Cat garfield = AnimalFactory.createCat(name, birthDate);
+        CatHouse.clear();
+        CatHouse.add(garfield);
+        CatHouse.add(sophie);
+        System.out.println(CatHouse.getCatById(0));
+        Assert.assertEquals(garfield, CatHouse.getCatById(0));
+    }
+    // TODO - Create tests for `Integer getNumberOfCats()`
     @Test
     public void testGetNumberOfCats() {
         String name = "Sophie";
@@ -41,5 +89,4 @@ public class CatHouseTest {
 
         Assert.assertEquals(1, numberOfCats);
     }
-    // TODO - Create tests for `Integer getNumberOfCats()`
 }
