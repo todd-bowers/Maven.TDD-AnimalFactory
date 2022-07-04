@@ -13,9 +13,56 @@ import java.util.Date;
  */
 public class DogHouseTest {
     // TODO - Create tests for `void add(Dog dog)`
+    @Test
+    public void addDogTest() {
+        String name = "Milo";
+        Date birthDate = new Date();
+        Dog dog = AnimalFactory.createDog(name, birthDate);
+        DogHouse.clear();
+        DogHouse.add(dog);
+        System.out.println(DogHouse.getNumberOfDogs());
+        DogHouse.remove(dog);
+        Assert.assertEquals((Integer) 0, DogHouse.getNumberOfDogs());
+    }
     // TODO - Create tests for `void remove(Integer id)`
+    @Test
+    public void removeDogByIDTest() {
+        String name = "Milo";
+        Date birthDate = new Date();
+        Dog dog = AnimalFactory.createDog(name, birthDate);
+        DogHouse.clear();
+        DogHouse.add(dog);
+        System.out.println(DogHouse.getDogById(0));
+        DogHouse.remove(0);
+        Assert.assertEquals(null, DogHouse.getDogById(0));
+    }
     // TODO - Create tests for `void remove(Dog dog)`
+    @Test
+    public void removeDogByNameTest() {
+        String name = "Milo";
+        Date birthDate = new Date();
+        Dog dog = AnimalFactory.createDog(name, birthDate);
+        DogHouse.clear();
+        DogHouse.add(dog);
+        System.out.println(DogHouse.getDogById(0));
+        DogHouse.remove(dog);
+        Assert.assertEquals(null, DogHouse.getDogById(0));
+    }
     // TODO - Create tests for `Dog getDogById(Integer id)`
+    @Test
+    public void getDogByIDTest() {
+        String name = "Milo";
+        Date birthDate = new Date();
+        Dog dog = AnimalFactory.createDog(name, birthDate);
+        String name2 = "Jeff";
+        Date birthDate2 = new Date();
+        Dog jeff = AnimalFactory.createDog(name, birthDate);
+        DogHouse.clear();
+        DogHouse.add(dog);
+        DogHouse.add(jeff);
+        System.out.println(DogHouse.getDogById(0));
+        Assert.assertEquals(dog, DogHouse.getDogById(0));
+    }
     // TODO - Create tests for `Integer getNumberOfDogs()`
 
     @Test
