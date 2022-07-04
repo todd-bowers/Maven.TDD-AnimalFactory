@@ -69,7 +69,7 @@ public class CatHouseTest {
         Cat sophie = AnimalFactory.createCat(name, birthDate);
         String name2 = "Garfield";
         Date birthDate2 = new Date();
-        Cat garfield = AnimalFactory.createCat(name, birthDate);
+        Cat garfield = AnimalFactory.createCat(name2, birthDate2);
         CatHouse.clear();
         CatHouse.add(garfield);
         CatHouse.add(sophie);

@@ -56,7 +56,7 @@ public class DogHouseTest {
         Dog dog = AnimalFactory.createDog(name, birthDate);
         String name2 = "Jeff";
         Date birthDate2 = new Date();
-        Dog jeff = AnimalFactory.createDog(name, birthDate);
+        Dog jeff = AnimalFactory.createDog(name2, birthDate2);
         DogHouse.clear();
         DogHouse.add(dog);
         DogHouse.add(jeff);
